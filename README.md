@@ -17,3 +17,10 @@ Please [post pure questions](https://answers.sap.com/questions/ask.html?primaryT
 For interactive discussions register for the [SAP Mentors and Friends Slack Workspace](https://sapmentors-slack-invite.cfapps.eu10.hana.ondemand.com/) and join the [#CAP](https://sapmentors.slack.com/messages/CNX247875) channel.
 
 On social media such as Twitter, please use the `#CAP` hashtag. Thanks, and welcome!
+
+## Resources
+
+* [Official Documentaiton](https://cap.cloud.sap/docs/)
+* [SAP Community Landing Page](https://community.sap.com/topics/cloud-application-programming)
+* [developer.sap.com Tutorials](https://developers.sap.com/tutorial-navigator.html?search=Cloud%20Application%20Programming%20Model)
+* [CAP repositories in the SAP-samples GitHub account](https://github.com/SAP-samples?q=cap)
