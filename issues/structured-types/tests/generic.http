@@ -1,0 +1,13 @@
+http://localhost:4004/structured-types/Divers
+
+###
+
+http://localhost:4004/structured-types/Divers
+?$expand=equipmentToOne
+
+###
+
+http://localhost:4004/structured-types/Divers
+?$filter=name eq 'Mikey'
+&$select=name
+&$expand=equipmentToMany
