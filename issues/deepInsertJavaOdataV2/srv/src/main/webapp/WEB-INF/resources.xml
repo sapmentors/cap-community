@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <Resource id="jdbc/java-hdi-container" provider="xs.openejb:XS Default JDBC Database"
+    type="javax.sql.DataSource">
+    service=${service_name_for_DefaultDB}
+  </Resource>
+</resources>

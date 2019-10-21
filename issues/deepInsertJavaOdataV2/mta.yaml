@@ -1,0 +1,32 @@
+ID: DeepInsertJavaODataV2
+_schema-version: "2.1"
+description: Deep Insert using Java OData v2
+version: 0.0.1
+modules:
+  - name: DeepInsertJavaODataV2-db
+    type: hdb
+    path: db
+    parameters:
+      memory: 256M
+      disk-quota: 256M
+    requires:
+      - name: DeepInsertJavaODataV2-db-hdi-container
+  - name: DeepInsertJavaODataV2-srv
+    type: java
+    path: srv
+    parameters:
+      memory: 1024M
+    provides:
+      - name: srv_api
+        properties:
+          url: ${default-url}
+    requires:
+      - name: DeepInsertJavaODataV2-db-hdi-container
+        properties:
+          JBP_CONFIG_RESOURCE_CONFIGURATION: '[tomcat/webapps/ROOT/META-INF/context.xml:
+            {"service_name_for_DefaultDB" : "~{hdi-container-name}"}]'
+resources:
+  - name: DeepInsertJavaODataV2-db-hdi-container
+    type: com.sap.xs.hdi-container
+    properties:
+      hdi-container-name: ${service-name}
