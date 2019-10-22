@@ -1,4 +1,4 @@
-ncredibly simple application making use of Composition key word in CDS.
+Incredibly simple application making use of Composition key word in CDS.
 
 Books is a composition of many Chapters
 
@@ -23,7 +23,7 @@ Performing a deep insert of a book and chapters using the following JSON:
 	"title": "War and Peace",
 	"stock" : 5,
 	"chapters" : [{"ID":1, "number":1, "name":"War"},
-				  {"ID":2, "number":2, "name":"Peace"]
+				  {"ID":2, "number":2, "name":"Peace"}]
 }
 
 A node.Js CAP application will insert both the parent and children and add the appropriate book link with no further code.
