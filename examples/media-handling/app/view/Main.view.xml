@@ -1,0 +1,13 @@
+<mvc:View controllerName="test.Sample.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+
+    <Page id="page" title="{i18n>appTitle}">
+        <content>
+			<VBox
+					alignItems="Center"
+					justifyContent="Center"
+					height="100%">
+			</VBox>
+        </content>
+    </Page>
+
+</mvc:View>
