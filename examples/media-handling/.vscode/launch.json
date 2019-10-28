@@ -8,7 +8,7 @@
             "name": "cds run",
             "request": "launch",
             "type": "node", "runtimeExecutable": "npx","runtimeArgs": [ "-n" ],
-            "args": [ "--","cds","run","--in-memory?" ], // the leading "--" arg ensures it works with as well as without debugging
+            "args": [ "--","cds","run","--in-memory" ], // the leading "--" arg ensures it works with as well as without debugging
             "console": "integratedTerminal",
             "skipFiles": [ "<node_internals>/**" ]
         }
