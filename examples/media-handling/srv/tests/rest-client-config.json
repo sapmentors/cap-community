@@ -1,0 +1,9 @@
+{
+  "rest-client.environmentVariables": {
+    "local": {
+      "protocol": "http",
+      "host": "localhost",
+      "port": "4004"
+    }
+  }
+}
