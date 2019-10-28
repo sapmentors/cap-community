@@ -1,0 +1,22 @@
+### Requires REST Client for VS Code
+### https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+###
+### Read Pictures
+GET https://{{host}}/media/Pictures
+### Create Picture
+POST https://{{host}}/media/Pictures
+Accept: application/json
+Content-Type: application/json
+
+{ "ID": "da07ae51-d0d3-41e7-a737-2555a213e5a9" }
+
+### Upload Binary
+PUT https://{{host}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a9)/content
+Content-Type: image/png
+
+< ./Test.png
+### Read Binary
+GET https://{{host}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a9)/content
+
+### Delete Image
+DELETE https://{{host}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a9)

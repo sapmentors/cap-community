@@ -1,0 +1,25 @@
+<mvc:View controllerName="test.Sample.controller.Main" displayBlock="true" 
+	xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:u="sap.ui.unified">
+
+	<Page id="page" title="{i18n>appTitle}">
+		<content>
+			<VBox alignItems="Center" justifyContent="Center" height="100%">
+				<u:FileUploader id="FileUploader" uploadUrl="/media/Pictures" uploadComplete="onUploadComplete"/>
+
+				<Button text="{i18n>main.UploadFile}" press="handleUploadPress"/>
+
+				<List headerText="{i18n>main.PictureList.headerText}"
+					items="{Backend>/Pictures}">
+					<items>
+						<CustomListItem>
+							<Text text="{Backend>ID}" />
+						</CustomListItem>
+					</items>
+				</List>
+			</VBox>
+		</content>
+	</Page>
+
+</mvc:View>
