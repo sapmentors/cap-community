@@ -1,6 +1,7 @@
 module.exports = srv => {
   const { Pictures } = cds.entities;
 
+  /*
   srv.on('UPDATE', 'Pictures', async req => {
     console.log("Udate");
 
@@ -21,11 +22,9 @@ module.exports = srv => {
     });
 
   })
-
-  /*
+  */
   srv.on('READ', 'Pictures', req => {
     "";
     console.log("Read");
   })
-  */
 }
