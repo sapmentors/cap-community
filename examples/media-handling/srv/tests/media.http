@@ -6,22 +6,22 @@
 ### Read Enititysets
 GET {{protocol}}://{{host}}:{{port}}/media/
 
-### Read Other
-GET {{protocol}}://{{host}}:{{port}}/media/Other
-
 ### Read Pictures
 # curl http://localhost:4004/media/Pictures | jq
 GET {{protocol}}://{{host}}:{{port}}/media/Pictures
 
 ### Create Picture
 # curl -X POST http://localhost:4004/media/Pictures -H "Accept: application/json" -H "Content-Type: application/json" --data '{ "ID": "da07ae51-d0d3-41e7-a737-2555a213e5a9", "mediatype": "image/png" }'
+# Without providing the attribute mediatype the download will send back
+# content-type: application/octet-stream
+# which is different to what is documented at:
+# https://cap.cloud.sap/docs/guides/generic-providers#media-data
 POST {{protocol}}://{{host}}:{{port}}/media/Pictures
 Accept: application/json
 Content-Type: application/json
 
 { 
-  "ID": "da07ae51-d0d3-41e7-a737-2555a213e5a9",
-  "mediatype": "image/png" 
+  "ID": "da07ae51-d0d3-41e7-a737-2555a213e5a9"
 }
 
 ### Upload Binary
@@ -45,6 +45,7 @@ GET {{protocol}}://{{host}}:{{port}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555
 DELETE {{protocol}}://{{host}}:{{port}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a9) 
 
 ### Create Picture JPEG
+# with mediatype provided the reading will work
 POST {{protocol}}://{{host}}:{{port}}/media/Pictures
 Accept: application/json
 Content-Type: application/json
