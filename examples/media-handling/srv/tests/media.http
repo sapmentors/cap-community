@@ -3,16 +3,26 @@
 ###
 ### Edit your settings.json and add the configuration from rest-client-config.json for local tests
 
+### Read Enititysets
+GET {{protocol}}://{{host}}:{{port}}/media/
+
 ### Read Pictures
 # curl http://localhost:4004/media/Pictures | jq
 GET {{protocol}}://{{host}}:{{port}}/media/Pictures
+
 ### Create Picture
-# curl -X POST http://localhost:4004/media/Pictures -H "Accept: application/json" -H "Content-Type: application/json" --data '{ "ID": "da07ae51-d0d3-41e7-a737-2555a213e5a9" }'
+# curl -X POST http://localhost:4004/media/Pictures -H "Accept: application/json" -H "Content-Type: application/json" --data '{ "ID": "da07ae51-d0d3-41e7-a737-2555a213e5a9", "mediatype": "image/png" }'
+# Without providing the attribute mediatype the download will send back
+# content-type: application/octet-stream
+# which is different to what is documented at:
+# https://cap.cloud.sap/docs/guides/generic-providers#media-data
 POST {{protocol}}://{{host}}:{{port}}/media/Pictures
 Accept: application/json
 Content-Type: application/json
 
-{ "ID": "da07ae51-d0d3-41e7-a737-2555a213e5a9" }
+{ 
+  "ID": "da07ae51-d0d3-41e7-a737-2555a213e5a9"
+}
 
 ### Upload Binary
 # curl -X PUT "http://localhost:4004/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a9)/content" -H "image/png" --data-binary @./srv/tests/Test.png
@@ -33,3 +43,26 @@ GET {{protocol}}://{{host}}:{{port}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555
 ### Delete Image
 # curl -X DELETE "http://localhost:4004/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a9)"
 DELETE {{protocol}}://{{host}}:{{port}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a9) 
+
+### Create Picture JPEG
+# with mediatype provided the reading will work
+POST {{protocol}}://{{host}}:{{port}}/media/Pictures
+Accept: application/json
+Content-Type: application/json
+
+{ 
+  "ID": "da07ae51-d0d3-41e7-a737-2555a213e5a8",
+  "mediatype": "image/jpeg" 
+}
+
+### Upload Binary JPEG
+PUT {{protocol}}://{{host}}:{{port}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a8)/content
+Content-Type: image/jpeg
+
+< ./Test.jpg
+
+### Read Binary JPEG
+GET {{protocol}}://{{host}}:{{port}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a8)/content
+
+### Delete Image JPEG
+DELETE {{protocol}}://{{host}}:{{port}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a8) 
