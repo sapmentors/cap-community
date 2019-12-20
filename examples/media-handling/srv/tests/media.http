@@ -26,6 +26,7 @@ Content-Type: application/json
 
 ### Upload Binary
 # curl -X PUT "http://localhost:4004/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a9)/content" -H "image/png" --data-binary @./srv/tests/Test.png
+# [ <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 01 2c 00 00 01 2c 08 06 00 00 00 79 7d 8e 75 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 06 ... >
 PUT {{protocol}}://{{host}}:{{port}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a9)/content
 Content-Type: image/png
 
@@ -39,6 +40,10 @@ Content-Type: image/png
 ### Read Binary
 # curl "http://localhost:4004/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a9)/content"
 GET {{protocol}}://{{host}}:{{port}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a9)/content
+
+### Upload using CustomFileUploader
+# [ <Buffer 2d 2d 2d 2d 2d 2d 57 65 62 4b 69 74 46 6f 72 6d 42 6f 75 6e 64 61 72 79 70 71 65 32 42 64 47 42 6e 74 77 72 32 64 31 58 0d 0a 43 6f 6e 74 65 6e 74 2d ... >
+GET http://localhost:4004/media/Pictures(68b593fd-fb02-4ce7-9a58-35f1ff92606e)/content
 
 ### Delete Image
 # curl -X DELETE "http://localhost:4004/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a9)"
