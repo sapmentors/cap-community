@@ -22,9 +22,8 @@ module.exports = srv => {
     });
 
   })
-  */
   srv.on('READ', 'Pictures', req => {
-    "";
     console.log("Read");
   })
+  */
 }

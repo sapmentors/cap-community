@@ -7,8 +7,3 @@ entity Pictures {
   @Core.IsMediaType : true
   mediatype : String;
 }
-
-entity Other {
-  key ID : UUID;
-  field : String;
-}
