@@ -35,6 +35,7 @@ sap.ui.define([
                 if (m && m[1] === "200") {
                     sMsg = `Return Code ${m[1]} - ${m[2]} - Success`;
                     oEvent.getSource().setValue("");
+                    this.byId("ListOfPictures").getBinding("items").refresh();
                 } else {
                     sMsg = `Error: ${sResponse}`;
                 }

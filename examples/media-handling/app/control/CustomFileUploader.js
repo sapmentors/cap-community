@@ -8,11 +8,11 @@ sap.ui.define(
 
 			_sendFilesWithXHR: function (aFiles) {
 				var iFiles,
-					sHeader,
-					sValue,
-					oXhrEntry,
-					oXHRSettings = this.getXhrSettings();
-
+				sHeader,
+				sValue,
+				oXhrEntry,
+				oXHRSettings = this.getXhrSettings();
+	
 				if (aFiles.length > 0) {
 					if (this.getUseMultipart()) {
 						//one xhr request for all files
@@ -26,13 +26,13 @@ sap.ui.define(
 					for (var j = 0; j < iFiles; j++) {
 						//keep a reference on the current upload xhr
 						this._uploadXHR = new window.XMLHttpRequest();
-
+		
 						oXhrEntry = {
 							xhr: this._uploadXHR,
 							requestHeaders: []
 						};
 						this._aXhr.push(oXhrEntry);
-						oXhrEntry.xhr.open("PUT", this.getUploadUrl(), true); //Changed to PUT method here
+						oXhrEntry.xhr.open("PUT", this.getUploadUrl(), true);
 						if (oXHRSettings) {
 							oXhrEntry.xhr.withCredentials = oXHRSettings.getWithCredentials();
 						}
@@ -71,20 +71,20 @@ sap.ui.define(
 						for (var l = 0; l < aFiles.length; l++) {
 							this._appendFileToFormData(formData, name, aFiles[l]);
 						}
-						formData.append("_charset_", "UTF-8"); // eslint-disable-line sap-no-dom-insertion
+						formData.append("_charset_", "UTF-8");
 						var data = this.FUDataEl.name;
 						if (this.getAdditionalData()) {
 							var sData = this.getAdditionalData();
-							formData.append(data, sData); // eslint-disable-line sap-no-dom-insertion
+							formData.append(data, sData);
 						} else {
-							formData.append(data, ""); // eslint-disable-line sap-no-dom-insertion
+							formData.append(data, "");
 						}
 						if (this.getParameters()) {
 							var oParams = this.getParameters();
 							for (var m = 0; m < oParams.length; m++) {
 								var sName = oParams[m].getName();
 								sValue = oParams[m].getValue();
-								formData.append(sName, sValue); // eslint-disable-line sap-no-dom-insertion
+								formData.append(sName, sValue);
 							}
 						}
 						oXhrEntry.file = formData;
@@ -95,7 +95,7 @@ sap.ui.define(
 					this._bUploading = false;
 					this._resetValueAfterUploadStart();
 				}
-
+		
 				return this;
 			},
 			renderer: "sap.ui.unified.FileUploaderRenderer"

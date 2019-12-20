@@ -10,11 +10,15 @@
 
 				<Button text="{i18n>main.UploadFile}" press="handleUploadPress"/>
 
-				<List headerText="{i18n>main.PictureList.headerText}"
+				<List 
+					id="ListOfPictures"
+					headerText="{i18n>main.PictureList.headerText}"
 					items="{Backend>/Pictures}">
 					<items>
 						<CustomListItem>
 							<Text text="{Backend>ID}" />
+								<Image src="/v2/media/Pictures({Backend>ID})/$value"
+									decorative="false" />
 						</CustomListItem>
 					</items>
 				</List>
