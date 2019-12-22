@@ -6,7 +6,10 @@
 	<Page id="page" title="{i18n>appTitle}">
 		<content>
 			<VBox alignItems="Center" justifyContent="Center" height="100%">
-				<u:FileUploader id="FileUploader" uploadUrl="/media/Pictures" uploadComplete="onUploadComplete"/>
+				<u:FileUploader id="FileUploader" 
+					uploadUrl="/media/Pictures" 
+					uploadComplete="onUploadComplete"
+					uploadAborted="onUploadAborted" />
 
 				<Button text="{i18n>main.UploadFile}" press="handleUploadPress"/>
 
