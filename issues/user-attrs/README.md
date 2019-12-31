@@ -14,7 +14,7 @@ Note: The documentation (here)[https://cap.cloud.sap/docs/node.js/authentication
 First, get the service up and running:
 
 1. Get to right place: `cd issues/user-attrs/`
-2. Install deps and run in memory (with debug): `npm i && DEbUG=true cds run --in-memory`
+2. Install deps and run in memory (with debug): `npm i && DEBUG=true cds run --in-memory`
 3. Navigate to `http://localhost:4004/catalog/Books` using user `test@example.com` and password `test` (check out package.json)
 
 Both Authors and Books entity sets return the right results, i.e. restricted to the correct authors.
