@@ -11,19 +11,19 @@ module.exports = srv => {
       let content;
 
       // https://areknawo.com/node-js-file-streams-explained/
-  
+
       // Read stream
       req.data.content.on("data", dataChunk => {
         console.log(dataChunk);
         content += dataChunk;
         // content += <someTransformation>(dataChunk)
       });
-  
+
       // Output stream
       req.data.content.on("end", () => {
         console.log("Stream ended");
         console.log(content);
-      });  
+      });
     } else {
       return next()
     }
