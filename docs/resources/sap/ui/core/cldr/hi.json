@@ -4502,7 +4502,7 @@
 			"speed-mile-per-hour": {
 				"displayName": "मील/घंटा",
 				"unitPattern-count-one": "{0} मी॰प्र॰घं॰",
-				"unitPattern-count-other": "{0} मी॰���्र॰घं॰"
+				"unitPattern-count-other": "{0} मी॰प्र॰घं॰"
 			},
 			"speed-knot": {
 				"displayName": "नॉट",

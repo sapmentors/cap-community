@@ -4814,7 +4814,7 @@
 			},
 			"mass-stone": {
 				"displayName": "стоуны",
-				"unitPattern-count-one": "{0} сто��н",
+				"unitPattern-count-one": "{0} стоун",
 				"unitPattern-count-few": "{0} стоуна",
 				"unitPattern-count-many": "{0} стоунов",
 				"unitPattern-count-other": "{0} стоуна"
@@ -5230,7 +5230,7 @@
 				"unitPattern-count-other": "{0} барр."
 			},
 			"coordinateUnit": {
-				"displayName": "направление",
+				"displayName": "напра��ление",
 				"east": "{0} в. д.",
 				"north": "{0} с. ш.",
 				"south": "{0} ю. ш.",
