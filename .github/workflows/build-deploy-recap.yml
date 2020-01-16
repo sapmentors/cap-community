@@ -29,5 +29,5 @@ jobs:
       env:
         ACTIONS_DEPLOY_KEY: ${{ secrets.actions_deploy_secret }}
         PUBLISH_BRANCH: master
-        PUBLISH_DIR: ./docs
+        PUBLISH_DIR: ./
 
