@@ -10,11 +10,11 @@
 				<l:BlockLayoutRow>
 					<l:BlockLayoutCell>
 						<VBox>
-							<core:Icon color="#1873B4" 
+							<!-- <core:Icon color="#1873B4" 
 								src="sap-icon://sap-ui5" 
 								size="5rem" 
 								class="sapUiSmallMarginBottom" 
-								width="100%" />
+								width="100%" /> -->
 							<Title level="H1" 
 								titleStyle="H1" 
 								text="re>≡CAP" 
