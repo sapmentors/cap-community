@@ -14,6 +14,7 @@
     "@openui5/sap.ui.core": "latest",
     "@openui5/sap.ui.layout": "latest",
     "@openui5/themelib_sap_fiori_3": "latest",
+    "@ui5/cli": "^1.13.0",
     "ui5-middleware-livereload": "latest"
   },
   "ui5": {
