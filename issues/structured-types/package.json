@@ -1,0 +1,28 @@
+{
+  "name": "structured-types",
+  "version": "0.0.1",
+  "description": "example on using and querying strucured types",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sapmentors/cap-community.git"
+  },
+  "keywords": [
+    "cap",
+    "structured",
+    "types"
+  ],
+  "author": "Volker Buzek <volker.buzek@js-soft.com>",
+  "scripts": {
+    "start": "cds watch"
+  },
+  "license": "SEE LICENSE IN <https://fedoraproject.org/wiki/Licensing/Beerware>",
+  "bugs": {
+    "url": "https://github.com/sapmentors/cap-community/issues"
+  },
+  "homepage": "https://github.com/sapmentors/cap-community#readme",
+  "dependencies": {
+    "@sap/cds-dk": "^1.0.2",
+    "express": "^4.17.1",
+    "sqlite": "^3.0.3"
+  }
+}

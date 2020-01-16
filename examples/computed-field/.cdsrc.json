@@ -1,0 +1,16 @@
+{
+    "build": {
+        "target": ".",
+        "tasks": [
+            {
+                "for": "node-cf",
+                "src": "srv",
+                "options": {
+                    "model": [
+                        "srv"
+                    ]
+                }
+            }
+        ]
+    }
+}
