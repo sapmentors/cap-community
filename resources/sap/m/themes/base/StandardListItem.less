@@ -1,0 +1,283 @@
+/* ======================================= */
+/* CSS for control sap.m/StandardListItem  */
+/* Base theme                              */
+/* ======================================= */
+
+.sapMSLI {
+	height: 3rem;
+}
+
+.sapMSLI.sapMSLIThumbnail,
+.sapMSLI.sapMSLINoIconInset,
+.sapMSLI.sapMSLIWithDescription,
+.sapMSLI.sapMSLINoTitleAdapt {
+	height: 5rem;
+}
+
+.sapMSLI > .sapMLIBContent {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: flex;
+	align-items: center;
+}
+
+.sapMSLIDescriptionAndInfo {
+	display: flex;
+	overflow: hidden;
+}
+
+.sapMSLIDiv {
+	display: flex;
+	flex: auto;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.sapMSLIWithDescription > .sapMLIBContent > .sapMSLIDiv {
+	flex-direction: column;
+}
+
+/* flex-direction: column is not supported in IE11 */
+html[data-sap-ui-browser='ie11'] .sapMSLIWithDescription > .sapMLIBContent > .sapMSLIDiv {
+	display: inline-block;
+	width: 100%;
+}
+
+.sapMSLINoTitleAdapt .sapMSLIDiv {
+	height: 2.5625rem;
+}
+
+.sapMSLITitle,
+.sapMSLITitleOnly,
+.sapMSLIDescription,
+.sapMSLIDescriptionText {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	flex: 1 1 auto;
+}
+
+.sapMSLIThumbnail:not(.sapMSLIWrapping) > .sapMLIBContent > .sapMSLIDiv,
+.sapMSLIDescriptionText {
+	padding: 0.125rem 0;
+}
+
+/* flex does not work in IE11 as expected, hence adding width 100% when only title is displayed */
+.sapMSLIDiv:not(.sapMSLIInfoMiddle) > .sapMSLITitleOnly {
+	width: 100%;
+}
+
+.sapMSLITitle,
+.sapMSLITitleOnly {
+	font-size: @sapMFontLargeSize;
+	color: @sapUiListTextColor;
+}
+
+.sapMSLIDescription,
+.sapMSLIDescriptionText {
+	font-size: @sapMFontMediumSize;
+	color: @sapUiContentLabelColor;
+}
+
+.sapMSLIWithDescription > .sapMLIBContent > .sapMSLIDiv > .sapMSLIDescription {
+	padding-top: 0.75rem;
+}
+
+.sapMSLIImgIcon,
+.sapMSLIImg,
+.sapMSLIImgNoInsetIcon,
+.sapMSLIImgNoInset {
+	width: 3rem;
+	height: 3rem;
+	line-height: 3rem;
+	flex: none;
+}
+
+.sapMSLIImgIcon,
+.sapMSLIImgNoInsetIcon {
+	font-family: "SAP-icons";
+	font-size: 1.375rem;
+	color: @sapUiContentNonInteractiveIconColor;
+}
+
+.sapMSLIImgNoInsetIcon,
+.sapMSLIImgNoInset,
+.sapMSLIImg {
+	font-size: 2.5rem;
+	margin-right: 0.75rem;
+}
+
+.sapMLIBActive .sapMSLIImgNoInsetIcon,
+.sapMLIBActive .sapMSLIImgIcon,
+.sapMLIBActive .sapMSLIExpandCollapse {
+	color: @sapUiListActiveTextColor;
+	text-shadow: none;
+}
+
+.sapMSLIDiv.sapMSLIInfoMiddle {
+	flex-direction: row;
+}
+
+.sapMSLIInfo {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: right;
+	margin: 0 0 0 1rem;
+	padding: 0.125rem 0;
+	font-size: @sapMFontMediumSize;
+}
+
+// no flex for info text upto 15 characters
+.sapMSLIInfoTextFull {
+	flex: none;
+}
+
+// ensure min-width for info text greater than 15 characters
+// 7.5rem is a result of the 15 characters string "MMMMMMMMIIIIIII" (approx. 120px)
+.sapMSLIInfoTextMinWidth {
+	min-width: 7.5rem;
+}
+
+.sapMSLIInfoMiddle > .sapMSLIInfo {
+	padding: 0;
+}
+
+/* The info is aligned right and therefore in RTL mode should be aligned on the left */
+html[dir=rtl] .sapMSLIInfo {
+	text-align: left;
+}
+
+.sapMSLIInfoNone {
+	color: @sapUiNeutralText;
+}
+
+.sapMSLIInfoError {
+	color: @sapUiNegativeText;
+}
+
+.sapMSLIInfoWarning {
+	color: @sapUiCriticalText;
+}
+
+.sapMSLIInfoSuccess {
+	color: @sapUiPositiveText;
+}
+
+.sapMSLIInfoInformation {
+	color: @sapUiInformativeText;
+}
+
+/* Wrapping */
+.sapMSLI.sapMSLIWrapping {
+	height: auto;
+	min-height: 3rem;
+}
+
+.sapMSLIWithDescription.sapMSLIWrapping,
+.sapMSLINoIconInset.sapMSLIWrapping,
+.sapMSLINoTitleAdapt.sapMSLIWrapping {
+	min-height: 5rem;
+}
+
+.sapMSLIWrapping .sapMSLITitle,
+.sapMSLIWrapping .sapMSLITitleOnly,
+.sapMSLIWrapping .sapMSLIDescription,
+.sapMSLIWrapping .sapMSLIDescriptionText {
+	white-space: normal;
+	word-wrap: break-word;
+}
+
+.sapMSLIWithDescription > .sapMLIBSelectS,
+.sapMSLIWithDescription > .sapMLIBSelectM,
+.sapMSLIWrapping > .sapMLIBSelectS,
+.sapMSLIWrapping > .sapMLIBSelectM,
+.sapMSLIWrapping > .sapMLIBContent > .sapMSLIImgIcon,
+.sapMSLIWrapping > .sapMLIBContent > .sapMSLIImg,
+.sapMSLIWrapping > .sapMLIBContent > .sapMSLIImgNoInsetIcon,
+.sapMSLIWrapping > .sapMLIBContent > .sapMSLIImgNoInset {
+	align-self: flex-start;
+	margin-top: 0.275rem;
+}
+
+.sapMSLIWrapping.sapMSLINoIconInset > .sapMLIBContent > .sapMSLIImgNoInsetIcon,
+.sapMSLIWrapping.sapMSLINoIconInset > .sapMLIBContent > .sapMSLIImgNoInset,
+.sapMSLIWrapping > .sapMLIBContent > .sapMSLIImg {
+	margin-top: 0.75rem;
+}
+
+.sapMSLIWrapping > .sapMLIBContent > .sapMSLIDiv {
+	padding: 1rem 0;
+}
+
+.sapMSLINoTitleAdapt.sapMSLIWrapping > .sapMLIBContent > .sapMSLIDiv > .sapMSLITitleOnly {
+	padding: 0
+}
+
+.sapMSLIWrapping .sapMSLITitleOnly > .sapMSLIInfo,
+.sapMSLIWrapping .sapMSLIDescriptionText > .sapMSLIInfo {
+	float: right;
+}
+
+.sapMSLIExpandCollapse {
+	color: @sapUiLink;
+	cursor: pointer;
+	padding: 0 1px;
+}
+
+.sapMSLIExpandCollapse:hover {
+	color: @sapUiLinkHover;
+	text-decoration: underline;
+}
+
+.sapMSLIExpandCollapse:focus {
+	outline: 1px dotted @sapUiContentFocusColor;
+}
+
+/* Compact size */
+.sapUiSizeCompact .sapMSLI {
+	height: 2rem;
+}
+
+.sapUiSizeCompact .sapMSLI.sapMSLIThumbnail,
+.sapUiSizeCompact .sapMSLI.sapMSLINoIconInset,
+.sapUiSizeCompact .sapMSLI.sapMSLIWithDescription,
+.sapUiSizeCompact .sapMSLI.sapMSLINoTitleAdapt {
+	height: 5rem;
+}
+
+.sapUiSizeCompact .sapMSLI.sapMSLIWrapping {
+	height: auto;
+	min-height: 2rem;
+}
+
+.sapUiSizeCompact .sapMSLI.sapMSLIWithDescription.sapMSLIWrapping,
+.sapUiSizeCompact .sapMSLI.sapMSLINoIconInset.sapMSLIWrapping,
+.sapUiSizeCompact .sapMSLI.sapMSLINoTitleAdapt.sapMSLIWrapping {
+	min-height: 5rem;
+}
+
+.sapUiSizeCompact .sapMSLIThumbnail:not(.sapMSLIWrapping) > .sapMLIBContent > .sapMSLIDiv {
+	padding: 0.25rem 0;
+}
+
+.sapUiSizeCompact .sapMSLITitle,
+.sapUiSizeCompact .sapMSLITitleOnly {
+	font-size: @sapMFontMediumSize;
+}
+
+.sapUiSizeCompact .sapMSLIImgIcon {
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 1rem;
+}
+
+.sapUiSizeCompact .sapMSLI.sapMSLIWrapping > .sapMLIBSelectS,
+.sapUiSizeCompact .sapMSLI.sapMSLIWrapping > .sapMLIBSelectM,
+.sapUiSizeCompact .sapMSLI.sapMSLIWithDescription > .sapMLIBSelectS,
+.sapUiSizeCompact .sapMSLI.sapMSLIWithDescription > .sapMLIBSelectM,
+.sapUiSizeCompact .sapMSLI.sapMSLIWrapping > .sapMLIBContent > .sapMSLIImgIcon {
+	margin-top: 0.5rem;
+}

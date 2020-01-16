@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["./ViewSettingsItem","sap/ui/base/ManagedObject","./library"],function(t,e,o){"use strict";var r=t.extend("sap.m.ViewSettingsCustomItem",{metadata:{library:"sap.m",properties:{filterCount:{type:"int",group:"Behavior",defaultValue:0}},aggregations:{customControl:{type:"sap.ui.core.Control",multiple:false}}}});r.prototype.exit=function(){if(this._control&&!this._control.getParent()){this._control.destroy();delete this._control}};r.prototype.setCustomControl=function(t){this._control=t;return this};r.prototype.getCustomControl=function(){return this._control};r.prototype.setFilterCount=function(t){this.setProperty("filterCount",t,true);return this};r.prototype.setSelected=function(t){this.setProperty("selected",t,true);return this};r.prototype.clone=function(t,o,r){var n=e.prototype.clone.apply(this,arguments);n._control=this._control.clone();return n};return r});

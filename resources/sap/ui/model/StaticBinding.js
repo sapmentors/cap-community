@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["./PropertyBinding","./ChangeReason","sap/base/assert","sap/base/Log"],function(t,n,e,a){"use strict";var o=t.extend("sap.ui.model.StaticBinding",{constructor:function(n){t.apply(this,[null,""]);this.vValue=n},metadata:{publicMethods:["attachChange","detachChange"]}});o.prototype.getPath=function(){e(null,"Static Binding has no path!");return null};o.prototype.getModel=function(){e(null,"Static Binding has no model!");return null};o.prototype.getContext=function(){e(null,"Static Binding has no context!");return null};o.prototype.updateRequired=function(){return true};o.prototype.getValue=function(){return this.vValue};o.prototype.setValue=function(t){if(t!==this.vValue){this.vValue=t;this._fireChange({reason:n.Change})}};o.prototype.attachChange=function(t,n){this.attachEvent("change",t,n)};o.prototype.detachChange=function(t,n){this.detachEvent("change",t,n)};return o});

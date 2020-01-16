@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/test/selectors/_BindingPath","sap/m/ListBase","sap/m/ListItemBase","sap/ui/thirdparty/jquery"],function(e,t,n,i){"use strict";var r=e.extend("sap.ui.test.selectors._TableRowItem",{_generate:function(e,t,n){if(t&&n){var r=this._findRow(e);var s=this._findTable(r);var o=s.getBinding("items");var a=r.getBindingContextPath&&r.getBindingContextPath();var u={};if(o&&a){u=i.extend(this._createSelectorBase(r,{}),{bindingPath:{modelName:o.model||undefined,path:a},ancestor:t})}this._oLogger.debug("Control "+e+" has table row binding context path "+a);return i.extend({},n,{ancestor:u})}else{this._oLogger.debug("Control "+e+" does not have unique selector within row subtree or unique table selector")}},_getAncestors:function(e){var t={};var n=this._findRow(e);if(n){t.validation=n;var i=this._findTable(n);if(i){t.selector=i;return t}}},_findRow:function(e){return this._findAncestor(e,function(e){return e instanceof n})},_findTable:function(e){return this._findAncestor(e,function(e){return e instanceof t})}});return r});

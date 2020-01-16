@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/support/library"],function(e){"use strict";var i=e.Categories,t=e.Severity,a=e.Audiences;var o={id:"dialogAriaLabelledBy",audiences:[a.Application],categories:[i.Accessibility],enabled:true,minversion:"*",title:"Dialog: The content will not be read if there is no focusable control inside it unless ariaLabelledBy is set",description:"When the Dialog is opened and ariaLabelledBy is not set, if there are focusable controls the first focusable control will be read, if there are no focusable controls in the content, JAWS will read only the footer and header of the Dialog ",resolution:"Add ariaLabelledBy for the Dialog, with value - IDs of the non focusable control(s) which are inside the Dialog content",resolutionurls:[{text:"Dialog controls: Accessibility",href:"https://ui5.sap.com/#/topic/5709e73d51f2401a9a5a89d8f5479132"}],check:function(e,i,a){a.getElementsByClassName("sap.m.Dialog").forEach(function(i){if(!i.getAssociation("ariaLabelledBy")){var a=i.getId(),o=i.getMetadata().getElementName();e.addIssue({severity:t.Medium,details:"Dialog '"+o+"' ("+a+") has no ariaLabelledBy association set",context:{id:a}})}})}};return[o]},true);

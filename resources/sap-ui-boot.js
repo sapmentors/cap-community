@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+(function(){"use strict";var e,t,r;e=document.getElementById("sap-ui-bootstrap");if(e){t=/^(?:.*\/)?resources\//.exec(e.getAttribute("src"));if(t){r=t[0]}}if(r==null){throw new Error("sap-ui-boot.js: could not identify script tag!")}function i(e,t){var i=e.length,s=0;if(i===0){t();return}function n(e){i--;if(e.type==="error"){s++}e.target.removeEventListener("load",n);e.target.removeEventListener("error",n);if(i===0&&s===0&&t){t()}}for(var o=0;o<e.length;o++){var a=document.createElement("script");a.addEventListener("load",n);a.addEventListener("error",n);a.src=r+e[o];document.head.appendChild(a)}}var s=[];if(/(trident)\/[\w.]+;.*rv:([\w.]+)/i.test(window.navigator.userAgent)){s.push("sap/ui/thirdparty/baseuri.js");s.push("sap/ui/thirdparty/es6-promise.js");s.push("sap/ui/thirdparty/es6-shim-nopromise.js")}else if(/(edge)[ \/]([\w.]+)/i.test(window.navigator.userAgent)||/(Version\/(11\.0)|PhantomJS).*Safari/.test(window.navigator.userAgent)){s.push("sap/ui/thirdparty/es6-promise.js")}i(s,function(){i(["ui5loader.js"],function(){sap.ui.loader.config({async:true});i(["ui5loader-autoconfig.js"])})})})();

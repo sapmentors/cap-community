@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/unified/CalendarLegendRenderer","sap/ui/core/Renderer"],function(e,t){"use strict";var n=t.extend(e);n.apiVersion=2;n.renderItemsHeader=function(e,t){var n=t.getItemsHeader();if(n&&(t.getItems().length||t.getStandardItems().length)){this._renderItemsHeader(e,n)}};n.renderAppointmentsItemsHeader=function(e,t){var n=t.getAppointmentItemsHeader();if(n&&t.getAppointmentItems().length){this._renderItemsHeader(e,n)}else if(t.getAppointmentItems().length&&(t.getItems().length||t.getStandardItems().length)){e.voidStart("hr");e.voidEnd()}};n._renderItemsHeader=function(e,t){e.openStart("div");e.class("sapMPlanCalLegendHeader");e.openEnd();e.text(t);e.close("div");e.voidStart("hr");e.voidEnd()};n.renderAdditionalContent=function(e,t){var n=t.getAppointmentItems(),d,r;this.renderAppointmentsItemsHeader(e,t);e.openStart("div");e.class("sapUiUnifiedLegendItems");r=t.getColumnWidth();e.style("column-width",r);e.style("-moz-column-width",r);e.style("-webkit-column-width",r);e.openEnd();for(d=0;d<n.length;d++){this.renderLegendItem(e,"sapUiCalLegDayType"+t._getItemType(n[d],n).slice(4),n[d],["sapUiUnifiedLegendSquareColor","sapMPlanCalLegendAppCircle"])}e.close("div")};return n},true);

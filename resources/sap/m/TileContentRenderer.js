@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/base/security/encodeCSS"],function(e){"use strict";var t={};t.render=function(t,r){var i=r.getTooltip_AsString();var n=r._getContentType();if(n){n=e(n)}var a=e("sapMFrameType"+r.getFrameType());t.write("<div");t.writeControlData(r);t.addClass("sapMTileCnt");t.addClass(n);t.addClass(a);if(i.trim()){t.writeAttributeEscaped("title",i)}t.writeClasses();t.write(">");this._renderContent(t,r);this._renderFooter(t,r);t.write("</div>")};t._renderContent=function(e,t){if(!t._bRenderContent){return}var r=t.getContent();if(r){e.write("<div");e.addClass("sapMTileCntContent");e.writeClasses();e.writeAttribute("id",t.getId()+"-content");e.write(">");if(!r.hasStyleClass("sapMTcInnerMarker")){r.addStyleClass("sapMTcInnerMarker")}e.renderControl(r);e.write("</div>")}};t._renderFooter=function(t,r){if(!r._bRenderFooter){return}var i="sapMTileCntFooterTextColor"+r.getFooterColor();var n=r.getTooltip_AsString();var a=r._getFooterText(t,r);t.write("<div");t.addClass("sapMTileCntFtrTxt");t.addClass(e(i));t.writeClasses();t.writeAttribute("id",r.getId()+"-footer-text");if(n.trim()){t.writeAttributeEscaped("title",n)}t.write(">");t.writeEscaped(a);t.write("</div>")};return t},true);

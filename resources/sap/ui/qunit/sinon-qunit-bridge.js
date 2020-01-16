@@ -1,0 +1,6 @@
+/*
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+(function(){"use strict";var t=QUnit.module;function n(t){a(this._oSandbox);throw t}function o(t){throw new Error("sinon.assert.fail outside of test: "+t)}function s(t,n){Object.keys(n).forEach(function(o){t[o]=n[o]});return t}function i(){}function e(t){throw new Error("sinon.assert.pass outside of test: "+t)}function r(t){if(t&&typeof t.then==="function"){return t.then(r.bind(this),n.bind(this))}a(this._oSandbox);return t}function a(t){t.verifyAndRestore();sinon.assert.fail=o;sinon.assert.pass=e}QUnit.module=function(o,e,a){var c,f,u;if(typeof e==="function"||typeof a==="function"){t.call(this,o);throw new Error("QUnit.module with nested callback not supported")}c=e&&e.afterEach||i;f=e&&e.beforeEach||i;u={beforeEach:function(t){this._oSandbox=sinon.sandbox.create({injectInto:this,properties:["mock","spy","stub"]});sinon.assert.fail=function(n){t.ok(false,n)};sinon.assert.pass=function(n){t.ok(true,n)};return f.apply(this,arguments)},afterEach:function(t){try{return r.call(this,c.apply(this,arguments))}catch(t){n.call(this,t)}}};t.call(this,o,e?s(s({},e),u):u)};sinon.assert.fail=o;sinon.assert.pass=e})();

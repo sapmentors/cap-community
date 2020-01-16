@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/test/_OpaLogger","sap/ui/base/Object","sap/ui/test/pipelines/PipelineFactory","sap/ui/thirdparty/jquery"],function(e,t,r,i){"use strict";var n=new r({name:"Matcher",functionName:"isMatching"}),s=e.getLogger("sap.ui.test.pipelines.MatcherPipeline");function a(e,t){var r=t;var i=e.every(function(e){var r;if(t){r=e.isMatching(t)}else{r=e.isMatching()}if(r){if(r!==true){t=r}return true}return false});if(i){return r===t?true:t}return false}return t.extend("sap.ui.test.pipelines.MatcherPipeline",{process:function(e){var t,r,u=e.control;var o=n.create(e.matchers);var p;if(!o||!o.length){s.debug("No matchers defined. All controls are returned");return u}if(!i.isArray(u)){p=1;r=[u]}else{r=u}var c=[];r.forEach(function(e){var t=a(o,e);if(t){if(t===true){c.push(e)}else{s.debug("Pipeline input control '"+"' was transformed to '"+t+"'");c.push(t)}}},this);s.debug(!!r.length?c.length+" out of "+r.length+" controls met the matchers pipeline requirements":"No controls found so matcher pipeline processing was skipped");if(!c.length){return false}if(p===1){t=c[0]}else{t=c}return t}})});

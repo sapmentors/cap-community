@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/core/Renderer","./InputBaseRenderer"],function(e,t){"use strict";var n=e.extend(t);n.apiVersion=2;n.writeInnerValue=function(e,t){if(t._bValid){e.attr("value",t._formatValue(t.getDateValue()))}else{e.attr("value",t.getValue())}};n.writeInnerAttributes=function(e,t){e.attr("type","text");if(t._bMobile){e.attr("readonly","readonly")}};n.getAriaRole=function(e){return"combobox"};n.getDescribedByAnnouncement=function(e){var n=t.getDescribedByAnnouncement.apply(this,arguments);return sap.ui.getCore().getLibraryResourceBundle("sap.m").getText("DATEPICKER_DATE_TYPE")+" "+n};n.getAccessibilityState=function(e){var n=t.getAccessibilityState.apply(this,arguments);n["autocomplete"]="none";n["haspopup"]=true;n["expanded"]=false;n["disabled"]=null;if(e._bMobile&&e.getEnabled()&&e.getEditable()){n["readonly"]=false}return n};return n},true);

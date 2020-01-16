@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/base/Log"],function(t){"use strict";var e=function(t){t=t||{};if(!e.isSupported()){throw Error("Beacon API is not supported")}if(typeof t.url!=="string"){throw Error("Beacon url must be valid")}this._nMaxBufferLength=t.maxBufferLength||10;this._aBuffer=[];this._sUrl=t.url;document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden"){this.send()}}.bind(this));window.addEventListener("unload",function(){this.send()}.bind(this))};e.isSupported=function(){return"navigator"in window&&"sendBeacon"in window.navigator&&"Blob"in window};e.prototype.append=function(t,e){this._aBuffer.push({key:t,value:e});if(this.getBufferLength()===this._nMaxBufferLength){this.send()}};e.prototype.getBufferLength=function(){return this._aBuffer.length};e.prototype.send=function(){if(this.getBufferLength()){var t=this._aBuffer.reduce(function(t,e){t+="&"+e.key+"="+e.value;return t},"sap-fesr-only=1");var e=new Blob([t],{type:"application/x-www-form-urlencoded;charset=UTF-8"});window.navigator.sendBeacon(this._sUrl,e);this.clear()}};e.prototype.clear=function(){this._aBuffer=[]};return e});

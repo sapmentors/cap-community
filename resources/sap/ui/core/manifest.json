@@ -1,0 +1,338 @@
+{
+  "_version": "1.9.0",
+  "sap.app": {
+    "id": "sap.ui.core",
+    "type": "library",
+    "embeds": [],
+    "applicationVersion": {
+      "version": "1.73.2"
+    },
+    "title": "The SAPUI5 Core Runtime.",
+    "description": "The SAPUI5 Core Runtime.\n\n  Contains the UI5 jQuery plugins (jQuery.sap.*), the Core and all its components,\n  base classes for Controls, Components and the Model View Controller classes.",
+    "ach": "CA-UI5-COR",
+    "resources": "resources.json",
+    "offline": true,
+    "openSourceComponents": [
+      {
+        "name": "jquery",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "jquery_mobile",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "qunit-composite",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "qunit-reporter-junit",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "iscroll",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "swipeview",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "mobify",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "zynga",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "less",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "datajs",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "d3",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "jszip",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "caja",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "cldr",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "mobiscroll",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "sinonjs",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "urijs",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "punycodejs",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "flexie.js",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "handlebars",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "requirejs",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "crossroadsjs",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "hasherjs",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "jssignals",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "blanket",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "array-polyfills",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "Element-getAttributeNames-polyfill",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "object-assign-polyfill",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "unorm",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "tdop",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "es6-promise",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "es6-string-method-startsWith",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "es6-string-methods-endsWith",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "es6-string-methods-includes",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "es6-string-methods-repeat",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "es6-string-methods-pad",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "klayjs",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "bignumber",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "lodash",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "hyphenopoly",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      },
+      {
+        "name": "es6-shim-nopromise",
+        "packagedWithMySelf": true,
+        "version": "0.0.0"
+      }
+    ]
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": [
+      "base",
+      "sap_hcb"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.73",
+      "libs": {}
+    },
+    "library": {
+      "i18n": "messagebundle.properties",
+      "content": {
+        "controls": [
+          "sap.ui.core.ComponentContainer",
+          "sap.ui.core.Control",
+          "sap.ui.core.HTML",
+          "sap.ui.core.Icon",
+          "sap.ui.core.InvisibleText",
+          "sap.ui.core.LocalBusyIndicator",
+          "sap.ui.core.ScrollBar",
+          "sap.ui.core.TooltipBase",
+          "sap.ui.core.XMLComposite",
+          "sap.ui.core.mvc.HTMLView",
+          "sap.ui.core.mvc.JSONView",
+          "sap.ui.core.mvc.JSView",
+          "sap.ui.core.mvc.TemplateView",
+          "sap.ui.core.mvc.View",
+          "sap.ui.core.mvc.XMLView",
+          "sap.ui.core.tmpl.DOMElement",
+          "sap.ui.core.tmpl.TemplateControl",
+          "sap.ui.core.util.Export"
+        ],
+        "elements": [
+          "sap.ui.core.CustomData",
+          "sap.ui.core.Element",
+          "sap.ui.core.Item",
+          "sap.ui.core.LayoutData",
+          "sap.ui.core.ListItem",
+          "sap.ui.core.Message",
+          "sap.ui.core.SeparatorItem",
+          "sap.ui.core.Title",
+          "sap.ui.core.VariantLayoutData",
+          "sap.ui.core.dnd.DragDropBase",
+          "sap.ui.core.dnd.DragInfo",
+          "sap.ui.core.dnd.DropInfo",
+          "sap.ui.core.dnd.DragDropInfo",
+          "sap.ui.core.search.OpenSearchProvider",
+          "sap.ui.core.search.SearchProvider",
+          "sap.ui.core.tmpl.DOMAttribute",
+          "sap.ui.core.util.ExportCell"
+        ],
+        "types": [
+          "any",
+          "boolean",
+          "float",
+          "int",
+          "object",
+          "string",
+          "void",
+          "sap.ui.core.AbsoluteCSSSize",
+          "sap.ui.core.AccessibleRole",
+          "sap.ui.core.AccessibleLandmarkRole",
+          "sap.ui.core.BarColor",
+          "sap.ui.core.BusyIndicatorSize",
+          "sap.ui.core.CalendarType",
+          "sap.ui.core.CSSColor",
+          "sap.ui.core.CSSSize",
+          "sap.ui.core.CSSSizeShortHand",
+          "sap.ui.core.Collision",
+          "sap.ui.core.ComponentLifecycle",
+          "sap.ui.core.Design",
+          "sap.ui.core.Dock",
+          "sap.ui.core.HorizontalAlign",
+          "sap.ui.core.ID",
+          "sap.ui.core.IconColor",
+          "sap.ui.core.ImeMode",
+          "sap.ui.core.IndicationColor",
+          "sap.ui.core.MessageType",
+          "sap.ui.core.OpenState",
+          "sap.ui.core.Orientation",
+          "sap.ui.core.Percentage",
+          "sap.ui.core.Priority",
+          "sap.ui.core.ScrollBarAction",
+          "sap.ui.core.Scrolling",
+          "sap.ui.core.SortOrder",
+          "sap.ui.core.TextAlign",
+          "sap.ui.core.TextDirection",
+          "sap.ui.core.TitleLevel",
+          "sap.ui.core.URI",
+          "sap.ui.core.ValueState",
+          "sap.ui.core.VerticalAlign",
+          "sap.ui.core.Wrapping",
+          "sap.ui.core.dnd.DropEffect",
+          "sap.ui.core.dnd.DropLayout",
+          "sap.ui.core.dnd.DropPosition",
+          "sap.ui.core.mvc.ViewType",
+          "sap.ui.core.routing.HistoryDirection"
+        ],
+        "interfaces": [
+          "sap.ui.core.IShrinkable",
+          "sap.ui.core.Label",
+          "sap.ui.core.PopupInterface",
+          "sap.ui.core.Toolbar",
+          "sap.ui.core.IContextMenu",
+          "sap.ui.core.IFormContent",
+          "sap.ui.core.dnd.IDragInfo",
+          "sap.ui.core.dnd.IDropInfo",
+          "sap.ui.core.IDScope"
+        ]
+      }
+    }
+  }
+}
