@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define([],function(){"use strict";var e={};e._aAllIconColors=["sapMITBFilterCritical","sapMITBFilterPositive","sapMITBFilterNegative","sapMITBFilterDefault"];e.render=function(e,t){var i=t.getContent(),a=t._getIconTabHeader();e.write("<div ");e.writeControlData(t);e.addClass("sapMITB");if(t.getStretchContentHeight()){e.addClass("sapMITBStretch")}if(!t.getApplyContentPadding()){e.addClass("sapMITBNoContentPadding")}e.addClass("sapMITBBackgroundDesign"+t.getBackgroundDesign());e.writeClasses();e.write(">");if(!t._bHideHeader){e.renderControl(a)}e.write("<div id='"+t.getId()+"-containerContent' ");e.addClass("sapMITBContainerContent");if(!t.getExpanded()){e.addClass("sapMITBContentClosed")}e.writeClasses();e.write(">");e.write("<div id='"+t.getId()+"-content' class='sapMITBContent' role='tabpanel' ");if(!t.getExpanded()){e.write("style='display: none'")}if(a.oSelectedItem){e.writeAttribute("aria-labelledby",a.oSelectedItem.getId())}e.write(">");if(t.getExpanded()){if(a.oSelectedItem&&a.oSelectedItem.getContent()){var n=a.oSelectedItem.getContent();if(n.length>0){i=n}}if(i.length>0){for(var d=0;d<i.length;d++){e.renderControl(i[d])}}}e.write("</div>");e.write("</div>");e.write("</div>")};return e},true);

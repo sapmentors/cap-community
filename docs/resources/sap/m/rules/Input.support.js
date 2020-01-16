@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/support/library"],function(e){"use strict";var i=e.Categories,t=e.Severity,n=e.Audiences;var s={id:"inputNeedsLabel",audiences:[n.Control],categories:[i.Accessibility],enabled:true,minversion:"1.28",title:"Input field: Missing label",description:"An input field needs a label",resolution:"Define a sap.m.Label for the input field in the xml view and set the labelFor property to this input field Id.",resolutionurls:[{text:"SAP Fiori Design Guidelines: Input field",href:"https://experience.sap.com/fiori-design-web/input-field/#guidelines"}],check:function(e,i,n){var s=n.getElementsByClassName("sap.m.Input").map(function(e){return e.getId()});n.getElementsByClassName("sap.m.Label").forEach(function(e){var i=e.getLabelFor();if(s.indexOf(i)>-1){var t=s.indexOf(i);s.splice(t,1)}});if(s.length>0){s.forEach(function(i){e.addIssue({severity:t.Medium,details:"Input field"+" ("+i+") is missing a label.",context:{id:i}})})}}};return[s]},true);

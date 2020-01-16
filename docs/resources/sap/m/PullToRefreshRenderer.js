@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/core/IconPool"],function(o){"use strict";o.insertFontFaceStyle();var t={apiVersion:2};t.render=function(o,t){var n=t.getShowIcon();var e=t.getCustomIcon();var a=t.getTooltip_AsString();var s=t._getRB();o.openStart("div",t);o.class("sapMPullDown");o.class(!t._bTouchMode?"sapMPullDownNontouch":"sapMPullDownTouch");if(n&&!e){o.class("sapMPullDownLogo")}if(a){o.attr("title",a)}o.attr("tabindex",0);o.attr("role","button");o.attr("aria-controls",t.getParent().sId+"-cont");o.openEnd();if(n&&e){var l=t.getCustomIconImage();if(l){o.openStart("div").class("sapMPullDownCI").openEnd();o.renderControl(l);o.close("div")}}o.openStart("span").class("sapMPullDownIcon").openEnd().close("span");o.openStart("span").class("sapMPullDownBusy").openEnd();o.renderControl(t._oBusyIndicator);o.close("span");o.openStart("span",t.getId()+"-T");o.class("sapMPullDownText");o.attr("aria-live","assertive");o.openEnd();o.text(s.getText(t._bTouchMode?"PULL2REFRESH_PULLDOWN":"PULL2REFRESH_REFRESH"));o.close("span");o.openStart("span",t.getId()+"-I");o.class("sapMPullDownInfo");o.openEnd();o.text(t.getDescription());o.close("span");o.close("div")};return t},true);

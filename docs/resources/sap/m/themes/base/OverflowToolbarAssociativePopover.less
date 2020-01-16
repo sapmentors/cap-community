@@ -1,0 +1,127 @@
+/* ======================================================== */
+/* CSS for control sap.m/OverflowToolbarAssociativePopover  */
+/* Base theme                                               */
+/* ======================================================== */
+
+.sapMOTAPopover {
+
+  &:focus{
+	outline: none;
+  }
+
+  &.sapMOTAPButtonsWithIcons {
+	.sapMOTAPButtonNoIcon {
+	  &> .sapMBtnInner > span.sapMBtnContent {
+		margin-left: 1.625rem;
+	  }
+	}
+  }
+
+  &.sapMPopover .sapMPopoverCont .sapMPopoverScroll {
+	padding: 0.25rem 0.5rem;
+
+	/* Disappear */
+	&> .sapMOTAPHidden {
+	  display: none;
+	}
+
+	/* All elements inside must have display block */
+	&> :not(.sapMOTAPHidden) {
+	  display: block;
+	}
+
+	&> .sapMTBSeparator.sapMTBSeparatorOverflowToolbar {
+		&:first-child,
+		&:last-child {
+			display: none;
+		}
+	}
+
+	/* Button, ToggleButton, OverflowToolbarButton */
+	&> button.sapMBtn {
+	  width: 100% !important;
+	  max-width: 100% !important;
+
+	  /* Button alignment */
+	  &> .sapMBtnInner {
+		text-align: start;
+	  }
+	}
+
+	/* Select */
+	&> div.sapMSlt {
+	  width: auto !important;
+	}
+
+	/* SegmentedButton - select form */
+	&> div.sapMSegBSelectWrapper {
+	  width: 100% !important;
+	  &> div.sapMSlt {
+		width: 100% !important;
+		max-width: 100% !important;
+	  }
+	}
+
+	/* ComboBox */
+	&> div.sapMComboBox {
+	  width: auto !important;
+	  max-width: auto !important;
+	}
+
+	/* SearchField */
+	&> div.sapMSF {
+	  width: 100% !important;
+	  max-width: 100% !important;
+	}
+
+	/* Input */
+	&> div.sapMInput {
+	  width: 100% !important;
+	  max-width: 100% !important;
+	}
+
+	/* DateTimeInput */
+	&> div.sapMDTI {
+	  width: 100% !important;
+	  max-width: 100% !important;
+	}
+
+  }
+}
+
+/* TODO remove after 1.62 version */
+html[data-sap-ui-browser^="ie"] .sapMOTAPopover.sapMPopover .sapMPopoverCont .sapMPopoverScroll > button.sapMBtn > .sapMBtnInner,
+html[data-sap-ui-browser^="ed"] .sapMOTAPopover.sapMPopover .sapMPopoverCont .sapMPopoverScroll > button.sapMBtn > .sapMBtnInner {
+  text-align: left;
+}
+
+/* TODO remove after 1.62 version */
+html[dir=rtl][data-sap-ui-browser^="ie"] .sapMOTAPopover.sapMPopover .sapMPopoverCont .sapMPopoverScroll > button.sapMBtn > .sapMBtnInner,
+html[dir=rtl][data-sap-ui-browser^="ed"] .sapMOTAPopover.sapMPopover .sapMPopoverCont .sapMPopoverScroll > button.sapMBtn > .sapMBtnInner {
+  text-align: right;
+}
+
+/* Compact mode overrides */
+.sapUiSizeCompact{
+
+  .sapMOTAPopover {
+
+	&.sapMPopover .sapMPopoverCont .sapMPopoverScroll {
+	  padding: 0.1875rem 0.375rem;
+	}
+  }
+
+}
+
+/* Phone mode overrides */
+html.sap-phone {
+	.sapMOTAPopover {
+	  overflow: hidden !important;
+	}
+}
+
+.sapMOTAPopover {
+	.sapMBtnTransparent:not(.sapMBtnActive):not(.sapMToggleBtnPressed), .sapMBtnDisabled .sapMBtnTransparent  {
+		color: @sapUiButtonTextColor;
+	}
+}

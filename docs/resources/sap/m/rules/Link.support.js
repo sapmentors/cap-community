@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/support/library"],function(e){"use strict";var t=e.Categories,r=e.Severity,s=e.Audiences;var i={id:"linkWithPressHandlerNoHref",audiences:[s.Control],categories:[t.Usability],enabled:true,minversion:"1.28",title:"Link: If a press handler is attached, the href property should not be set",description:"If a JavaScript action should be triggered using the press event, the href property should not be set",resolution:"Remove the href property of the link",resolutionurls:[{text:"API Reference: sap.m.Link",href:"https://sapui5.hana.ondemand.com/#/api/sap.m.Link"}],check:function(e,t,s){s.getElementsByClassName("sap.m.Link").forEach(function(t){if(t.getProperty("href")&&t.mEventRegistry.hasOwnProperty("press")){var s=t.getId(),i=t.getMetadata().getElementName();e.addIssue({severity:r.Medium,details:"Link '"+i+"' ("+s+") has both press handler attached and href property set",context:{id:s}})}})}};return[i]},true);

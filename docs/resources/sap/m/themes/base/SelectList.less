@@ -1,0 +1,196 @@
+/* ================================= */
+/* CSS for control sap.m/SelectList  */
+/* Base theme                        */
+/* ================================= */
+
+@_sap_m_SelectList_ItemHeight: 2.5rem;
+@_sap_m_SelectList_ItemCompactHeight: 2rem;
+
+/* ------------------------------ */
+/* commons styles                 */
+/* ------------------------------ */
+
+.sapMSelectList,
+.sapMSelectListItemBase {
+	box-sizing: border-box;
+}
+
+/* disabled */
+
+.sapMSelectListDisabled,
+.sapMSelectListItemBaseDisabled {
+	pointer-events: none;
+}
+
+/* ------------------------------ */
+/* list                           */
+/* ------------------------------ */
+
+.sapMSelectList {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	list-style-type: none;
+	background: @sapUiListBackground;
+}
+
+.sapMSelectListTableLayout {
+	display: table;
+	border-collapse: collapse;
+}
+
+/* ------------------------------ */
+/* item                           */
+/* ------------------------------ */
+
+.sapMSelectListItemBase {
+	outline: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	color: @sapUiListTextColor;
+	font-size: @sapMFontMediumSize;
+	height: @_sap_m_SelectList_ItemHeight;
+	cursor: pointer;
+}
+
+.sapMSelectListItem {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0 1rem 0 1rem;
+	line-height: @_sap_m_SelectList_ItemHeight;
+}
+
+.sapMSelectListItemIcon {
+	padding-right: 0.4375rem;
+}
+
+li.sapMSelectListItemBaseInvisible {
+	display: none;
+}
+
+/* elements inside the select effects the size of the browsers default dragging ghost element */
+.sapUiDnDDragging .sapMSelectListItemBase + .sapMSelectListItemBase {
+	display: none;
+}
+
+/* hover */
+.sapMSelectListItemBaseHoverable:hover {
+	background: @sapUiListHoverBackground;
+}
+
+/* hover selected */
+.sapMSelectListItemBaseSelected.sapMSelectListItemBaseHoverable:hover {
+	background-color: @sapUiListSelectionHoverBackground;
+}
+
+/* pressed and pressed selected */
+.sapMSelectListItemBase.sapMSelectListItemBasePressed,
+.sapMSelectListItemBase.sapMSelectListItemBasePressed.sapMSelectListItemBaseSelected {
+	color: @sapUiListActiveTextColor;
+	background: @sapUiListActiveBackground;
+}
+
+/* focus */
+html.sap-desktop .sapMSelectListItemBase:focus {
+	outline: dotted 1px;
+	outline-offset: -2px;
+}
+
+/* TODO remove after 1.62 version */
+html[data-sap-ui-browser^="ie"].sap-desktop,
+html[data-sap-ui-browser^="ed"].sap-desktop {
+
+	.sapMSelectListItemBase:not(.sapMSelectListRow):focus::before,
+	.sapMSltPicker-CTX .sapMSelectListItemBaseSelected:not(.sapMSelectListRow)::before,
+	.sapMComboBoxBasePicker-CTX .sapMSelectListItemBaseSelected:not(.sapMSelectListRow)::before {
+		content: " ";
+		position: absolute;
+		top: 1px;
+		right: 1px;
+		bottom: 1px;
+		left: 1px;
+		pointer-events: none;
+	}
+
+	.sapMSelectListItemBase:focus,
+	.sapMSltPicker-CTX .sapMSelectListItemBaseSelected,
+	.sapMComboBoxBasePicker-CTX .sapMSelectListItemBaseSelected {
+		outline: none;
+		position: relative;
+	}
+
+	.sapMSelectListCell {
+		position: relative;
+	}
+
+	.sapMSelectListItemBase:focus,
+	.sapMSltPicker-CTX .sapMSelectListItemBaseSelected,
+	.sapMComboBoxBasePicker-CTX .sapMSelectListItemBaseSelected {
+		.sapMSelectListCell::before {
+			position: absolute;
+			bottom: 1px;
+			top: 1px;
+			left: 0;
+			right: 0;
+			content: " ";
+			pointer-events: none;
+		}
+
+		.sapMSelectListFirstCell.sapMSelectListCell::before {
+			left: 1px;
+		}
+
+		.sapMSelectListLastCell.sapMSelectListCell::before {
+			right: 1px;
+		}
+	}
+}
+
+/* ------------------------------ */
+/* row                            */
+/* ------------------------------ */
+
+.sapMSelectListRow {
+	display: table-row;
+}
+
+/* ------------------------------ */
+/* cell                           */
+/* ------------------------------ */
+
+.sapMSelectListCell {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 1rem;
+}
+
+
+.sapMSelectListLastCell {
+	text-align: right;
+	padding-right: 1rem;
+}
+
+/* ------------------------------ */
+/* separator                      */
+/* ------------------------------ */
+
+.sapMSelectListSeparatorItem {
+	border: 1px solid @sapUiListBorderColor;
+}
+
+/* compact size  */
+
+/* ------------------------------ */
+/* commons styles                 */
+/* ------------------------------ */
+
+.sapUiSizeCompact .sapMSelectListItemBase {
+	height: @_sap_m_SelectList_ItemCompactHeight;
+}
+
+.sapUiSizeCompact .sapMSelectListItem {
+	line-height: @_sap_m_SelectList_ItemCompactHeight;
+}

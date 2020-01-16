@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/core/library"],function(t){"use strict";var e=t.TextDirection;var i={};i.render=function(t,i){var r=t;if(!i.aRBs){return}var a=i.aRBs.filter(function(t){return t.getVisible()});var s=i.getColumns();var d=i.getTextDirection();var l=sap.ui.getCore().getConfiguration().getRTL();r.write("<div");r.writeControlData(i);r.addClass("sapMRbG");if(!i.getEditable()){r.addClass("sapMRbGRo")}if(s>1){if(s==a.length){r.addClass("sapMRbG1Row")}else{r.addClass("sapMRbGTab")}}if(i.getWidth()&&i.getWidth()!=""){r.addStyle("width",i.getWidth())}if(i.getTooltip_AsString()){r.writeAttributeEscaped("title",i.getTooltip_AsString())}if(!l&&d!=e.Inherit){r.writeAttribute("dir",d.toLowerCase())}r.writeAccessibilityState(i,{role:"radiogroup"});r.writeClasses();r.writeStyles();r.write(">");for(var o=0;o<s;o++){if(s>1&&s!=a.length){r.write("<div");r.addClass("sapMRbGCol");r.writeClasses();r.write(">")}for(var n=o;n<a.length;n=n+s){r.renderControl(a[n])}if(s>1&&s!=a.length){r.write("</div>")}}if(s>1&&s!=a.length){r.write('<div class="sapMRbGDummy"> </div>')}r.write("</div>")};return i},true);
