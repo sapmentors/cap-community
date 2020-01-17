@@ -1,0 +1,29 @@
+{
+  "name": "recap",
+  "version": "1.0.0",
+  "description": "official website for the reCAP (un)conference",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf ../docs/*; ui5 build self-contained --all --dest ../docs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openui5/sap.m": "latest",
+    "@openui5/sap.ui.core": "latest",
+    "@openui5/sap.ui.layout": "latest",
+    "@openui5/themelib_sap_fiori_3": "latest",
+    "@ui5/cli": "^1.13.0",
+    "ui5-middleware-livereload": "latest"
+  },
+  "ui5": {
+    "dependencies": [
+      "@openui5/sap.ui.core",
+      "@openui5/sap.m",
+      "@openui5/sap.ui.layout",
+      "@openui5/themelib_sap_fiori_3",
+      "ui5-middleware-livereload"
+    ]
+  }
+}
