@@ -3812,7 +3812,7 @@
 				"relativeTimePattern-count-one": "خلال ساعة واحدة",
 				"relativeTimePattern-count-two": "خلال ساعتين",
 				"relativeTimePattern-count-few": "خلال {0} ساعات",
-				"relativeTimePattern-count-many": "خلال {0} ساعة",
+				"relativeTimePattern-count-many": "خلال {0} سا��ة",
 				"relativeTimePattern-count-other": "خلال {0} ساعة"
 			},
 			"relativeTime-type-past": {

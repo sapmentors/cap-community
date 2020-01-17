@@ -2225,7 +2225,7 @@
 				"yMd": {
 					"d": "d.MM – d.MM.y 'г'. G",
 					"M": "d.MM – d.MM.y 'г'. G",
-					"y": "d.MM.y 'г'. – d.MM.y 'г'. G",
+					"y": "d.MM.y '��'. – d.MM.y 'г'. G",
 					"G": "d.MM.y 'г'. G – d.MM.y 'г'. G"
 				},
 				"yMEd": {

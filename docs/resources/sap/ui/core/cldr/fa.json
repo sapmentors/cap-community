@@ -4641,7 +4641,7 @@
 			"volume-liter": {
 				"displayName": "لیتر",
 				"unitPattern-count-one": "{0} لیتر",
-				"unitPattern-count-other": "{0} لیت��",
+				"unitPattern-count-other": "{0} لیتر",
 				"perUnitPattern": "{0} در لیتر"
 			},
 			"volume-deciliter": {
