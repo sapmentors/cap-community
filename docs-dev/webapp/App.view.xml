@@ -86,6 +86,8 @@
 							<Text text="After the opening keynote in the main conference room" />
 							<Text text="we'll split into groups and work/listen/demo at cuddly ad-hoc meeting spots throughout the office." 
 								class="sapUiTinyMarginBottom" />
+							<Text text="(btw: 🎥 as many of the sessions as possible will be live-streamed!)" 
+								class="sapUiTinyMarginBottom" />
 							<Text text="After the event is before the 🎉 - there'll be the opportunity for talk and drink after the event - yes, there'll be 🍺" 
 								class="sapUiTinyMarginBottom" />
 						</VBox>
