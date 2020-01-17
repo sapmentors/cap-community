@@ -10,11 +10,7 @@
 				<l:BlockLayoutRow>
 					<l:BlockLayoutCell>
 						<VBox>
-							<!-- <core:Icon color="#1873B4" 
-								src="sap-icon://sap-ui5" 
-								size="5rem" 
-								class="sapUiSmallMarginBottom" 
-								width="100%" /> -->
+							<!-- <core:Icon color="#1873B4" src="sap-icon://sap-ui5" size="5rem" class="sapUiSmallMarginBottom" width="100%" /> -->
 							<Title level="H1" 
 								titleStyle="H1" 
 								text="re>≡CAP" 
@@ -71,7 +67,7 @@
 					<l:BlockLayoutCell title="here we are!">
 						<VBox alignItems="Center" 
 							width="100%">
-							<core:HTML content="&lt;p&gt;The very first international conference on the &lt;a href=&quot;https://cap.cloud.sap/docs/&quot;&gt;SAP Cloud Application Programming Model&lt;/a&gt; is happening!&lt;/p&gt;
+							<core:HTML content="&lt;p&gt;The very first international conference on the &lt;a href=&quot;https://cap.cloud.sap/docs/&quot; target=&quot;_blank&quot;&gt;SAP Cloud Application Programming Model&lt;/a&gt; is happening!&lt;/p&gt;
 						&lt;p&gt;After lots of Slack-, Twitter-, and E-Mail-ing, the #CAP community decided it&apos;s time to do it:&lt;/p&gt;" />
 							<Title level="H2" 
 								text="🤝 meet in person, 💫 exchange knowledge, 🧑‍💻👨‍💻 hack together!" 
@@ -90,6 +86,8 @@
 							<Text text="After the opening keynote in the main conference room" />
 							<Text text="we'll split into groups and work/listen/demo at cuddly ad-hoc meeting spots throughout the office." 
 								class="sapUiTinyMarginBottom" />
+							<Text text="(btw: 🎥 as many of the sessions as possible will be live-streamed!)" 
+								class="sapUiTinyMarginBottom" />
 							<Text text="After the event is before the 🎉 - there'll be the opportunity for talk and drink after the event - yes, there'll be 🍺" 
 								class="sapUiTinyMarginBottom" />
 						</VBox>
@@ -106,7 +104,7 @@
 				<l:BlockLayoutRow>
 					<l:BlockLayoutCell title="Travel + Parking">
 						<VBox>
-							<core:HTML content="&lt;p&gt;The venue (j&amp;amp;s-soft HQ) is &lt;a href=&quot;https://bit.ly/2R6Zh0L&quot;&gt;centrally located in Heidelberg&lt;/a&gt;.&lt;/p&gt;" 
+							<core:HTML content="&lt;p&gt;The venue (j&amp;amp;s-soft HQ) is &lt;a href=&quot;https://bit.ly/2R6Zh0L&quot; target=&quot;_blank&quot;&gt;centrally located in Heidelberg&lt;/a&gt;.&lt;/p&gt;" 
 								class="sapUiTinyMarginBottom" />
 
 							<List>
@@ -129,16 +127,7 @@
 					<l:BlockLayoutCell title="Hotels">
 						<Text text="All of the below hotels are in walking distance (~5-7 min by foot) to the conference venue" 
 							class="sapUiTinyMarginBottom" />
-						<core:HTML content="&lt;p&gt;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&lt;em&gt;Note: &lt;/em&gt; we have no affiliation with any of the hotels listed!&#10;&#9;&#9;&#9;&#9;&#9;&#9;&lt;/p&gt;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&lt;ul&gt;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&lt;li&gt;&lt;a href=&quot;https://starinnhotels.com/star-inn-hotel-suites-premium-heidelberg-by-quality/&quot;&gt;Star Inn&lt;/a&gt;: larg-ish hotel &gt; 200 rooms, reliably noise-cancelling windows, excellent and rich breakfast. Parking available.&lt;/li&gt;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&lt;li&gt;&lt;a href=&quot;https://www.99-hotels.com/hotels/heidelberg/&quot;&gt;Ninety Nine&lt;/a&gt;: medium-ish hotel ~ 100 rooms, design-oriented, reliable noise-cancelling windows, wonderful veggie- and seafood-bowls. Parking available&lt;/li&gt;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&lt;li&gt;&lt;a href=&quot;https://www.hotelbb.de/de/heidelberg&quot;&gt;B&amp;amp;B&lt;/a&gt;: economy class hotel. Parking available&lt;/li&gt;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&lt;/ul&gt;" />
-
-						<!-- <p>
-							<em>Note: </em> we have no affiliation with any of the hotels listed!
-						</p>
-						<ul>
-							<li><a href="https://starinnhotels.com/star-inn-hotel-suites-premium-heidelberg-by-quality/">Star Inn</a>: larg-ish hotel > 200 rooms, reliably noise-cancelling windows, excellent and rich breakfast. Parking available.</li>
-							<li><a href="https://www.99-hotels.com/hotels/heidelberg/">Ninety Nine</a>: medium-ish hotel ~ 100 rooms, design-oriented, reliable noise-cancelling windows, wonderful veggie- and seafood-bowls. Parking available</li>
-							<li><a href="https://www.hotelbb.de/de/heidelberg">B&amp;B</a>: economy class hotel. Parking available</li>
-						</ul> -->
+						<core:HTML content="&lt;p&gt;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&lt;em&gt;Note: &lt;/em&gt; we have no affiliation with any of the hotels listed!&#10;&#9;&#9;&#9;&#9;&#9;&#9;&lt;/p&gt;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&lt;ul&gt;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&lt;li&gt;&lt;a href=&quot;https://starinnhotels.com/star-inn-hotel-suites-premium-heidelberg-by-quality/&quot; target=&quot;_blank&quot;&gt;Star Inn&lt;/a&gt;: larg-ish hotel &gt; 200 rooms, reliably noise-cancelling windows, excellent and rich breakfast. Parking available.&lt;/li&gt;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&lt;li&gt;&lt;a href=&quot;https://www.99-hotels.com/hotels/heidelberg/&quot; target=&quot;_blank&quot;&gt;Ninety Nine&lt;/a&gt;: medium-ish hotel ~ 100 rooms, design-oriented, reliable noise-cancelling windows, wonderful veggie- and seafood-bowls. Parking available&lt;/li&gt;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&lt;li&gt;&lt;a href=&quot;https://www.hotelbb.de/de/heidelberg&quot; target=&quot;_blank&quot;&gt;B&amp;amp;B&lt;/a&gt;: economy class hotel. Parking available&lt;/li&gt;&#10;&#9;&#9;&#9;&#9;&#9;&#9;&lt;/ul&gt;" />
 					</l:BlockLayoutCell>
 				</l:BlockLayoutRow>
 

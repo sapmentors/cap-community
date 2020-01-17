@@ -4638,7 +4638,7 @@
 				"unitPattern-count-one": "{0} мм",
 				"unitPattern-count-few": "{0} мм",
 				"unitPattern-count-many": "{0} мм",
-				"unitPattern-count-other": "{0} мм"
+				"unitPattern-count-other": "{0} м��"
 			},
 			"length-micrometer": {
 				"displayName": "мкм",
@@ -5230,7 +5230,7 @@
 				"unitPattern-count-other": "{0} барр."
 			},
 			"coordinateUnit": {
-				"displayName": "напра��ление",
+				"displayName": "направление",
 				"east": "{0} в. д.",
 				"north": "{0} с. ш.",
 				"south": "{0} ю. ш.",
