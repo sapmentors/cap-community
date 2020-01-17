@@ -1,0 +1,60 @@
+/* ======================================= */
+/* CSS for control sap.m/TablePersoDialog  */
+/* Base theme                              */
+/* ======================================= */
+
+.sapMPersoDialogFixedBar {
+	position: relative;
+
+	.sapMPersoDialogResetBtn {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+.sapMPersoDialogFixedBar {
+	.sapMPersoDialogSelectAllCb > .sapMCbLabel {
+		font-size: 1.125rem;
+	}
+}
+.sapUiSizeCompact .sapMPersoDialogFixedBar {
+	.sapMPersoDialogSelectAllCb > .sapMCbLabel {
+		font-size: 0.975rem;
+	}
+}
+
+.sapUiSizeCompact .sapMTB-Transparent-CTX.sapMTB.sapMPersoDialogFixedBar > :first-child {
+    margin-left: 1rem;
+}
+
+/* prevent that dialog is too wide when text is too long, but not on phone */
+.sapMPersoDialog:not(.sapMDialogPhone) .sapMDialogScroll {
+	max-width: 25rem;
+}
+
+.sapMPersoDialogLI .sapMILILabel {
+	max-width: none;
+}
+
+.sapMPersoDialogLI .sapMILIDiv {
+	min-width: 5.875rem;
+}
+
+.sapMTB-Transparent-CTX.sapMTB.sapMPersoDialogFixedBar{
+	padding-left: 0;
+	border-bottom: 2px solid @sapUiListHeaderBorderColor;
+}
+
+.sapMTB-Transparent-CTX.sapMTB.sapMPersoDialogFixedBar > :first-child{
+	margin-left: 1rem;
+}
+
+.sapMPersoDialogLIHeader{
+	border-bottom: 0;
+}
+
+
+html.sap-tablet:not(.sap-combi) .sapMPersoDialog{
+	min-width: 20rem;
+}

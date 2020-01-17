@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/Device"],function(e){"use strict";var t={};t.render=function(t,i){var n=i._getAllButtons(),r=i.getAggregation("_invisibleAriaTexts"),o=sap.ui.getCore().getLibraryResourceBundle("sap.m"),s=n.length,a=sap.ui.getCore().getConfiguration().getAccessibility(),l=n.filter(function(e){return e.getVisible()}).length,u,g,c,d,f=1,C=function(e){return r.filter(function(t){return t.getId().indexOf(e.getId())>-1})[0]};for(g=0;g<s;g++){d=n[g];d.removeStyleClass("sapMActionSheetButtonNoIcon");if(d.getIcon()&&d.getVisible()){c=true}else{d.addStyleClass("sapMActionSheetButtonNoIcon")}}t.write("<div");t.writeControlData(i);t.addClass("sapMActionSheet");if(c){t.addClass("sapMActionSheetMixedButtons")}t.writeClasses();var p=i.getTooltip_AsString();if(p){t.writeAttributeEscaped("title",p)}a&&t.writeAttributeEscaped("role","presentation");t.write(">");for(g=0;g<s;g++){d=n[g];t.renderControl(n[g].addStyleClass("sapMActionSheetButton"));if(a&&d.getVisible()){u=C(d);if(u){u.setText(o.getText("ACTIONSHEET_BUTTON_INDEX",[f,l]));t.renderControl(u)}f++}}if(e.system.phone&&i.getShowCancelButton()){t.renderControl(i._getCancelButton())}t.write("</div>")};return t},true);

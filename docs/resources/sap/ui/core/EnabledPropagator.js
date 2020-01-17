@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["./Control"],function(e){"use strict";var t=function(t,a){if(!(this instanceof e)){throw new Error("EnabledPropagator only supports subclasses of Control")}if(t===undefined){t=true}function n(e){var t=e.getParent();while(t&&!t.getEnabled&&t.getParent){t=t.getParent()}return t}if(this.getEnabled===undefined){this.getEnabled=function(){var e=n(this);return e&&e.getEnabled&&!e.getEnabled()?false:this.getProperty("enabled")};if(a){this.getMetadata().addProperty("Enabled",{type:"boolean",group:"Behavior",defaultValue:!!t})}this.getMetadata().addProperty("enabled",{type:"boolean",group:"Behavior",defaultValue:!!t});this.getMetadata().addPublicMethods("getEnabled")}else{var r=this.getEnabled;this.getEnabled=function(){var e=n(this);return e&&e.getEnabled&&!e.getEnabled()?false:r.apply(this)}}if(this.setEnabled===undefined){this.setEnabled=function(e){return this.setProperty("enabled",e)};this.getMetadata().addPublicMethods("setEnabled")}};return t},true);

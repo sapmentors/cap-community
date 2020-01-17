@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/model/Model","./ControlPropertyBinding","sap/ui/thirdparty/jquery"],function(t,e,n){"use strict";var o=t.extend("sap.ui.model.control.ControlModel",{constructor:function(e){t.apply(this,arguments);this.oControl=e;this.oControl.attachEvent("_change",this.checkUpdate,this);this.oElements=[]}});o.prototype.destroy=function(){this.oControl.detachEvent("_change",this.checkUpdate,this)};o.prototype.addFacadeComponent=function(t){var e=this.oElements.indexOf(t);if(e<0){this.oElements.push(t);t.attachEvent("_change",this.checkUpdate,this)}};o.prototype.removeFacadeComponent=function(t){var e=this.oElements.indexOf(t);if(e>=0){this.oElements.splice(e,1);t.detachEvent("_change",this.checkUpdate,this)}};o.prototype.bindProperty=function(t,n){n=n||this.oControl;if(n!==this.oControl){this.addFacadeComponent(n)}return new e(this,t,n)};o.prototype.checkUpdate=function(t){if(this._onchange){this._onchange(t)}if(this.aBindings.length){var e=this.aBindings.slice(0);n.each(e,function(t,e){e.checkUpdate()})}};return o});

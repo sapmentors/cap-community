@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/m/Text"],function(e){"use strict";var r={apiVersion:2};var t=sap.ui.getCore().getLibraryResourceBundle("sap.m");r.render=function(t,n){var s=n._getControlsForBreadcrumbTrail(),a=n._getSelect(),o=n._sSeparatorSymbol;t.openStart("nav",n);t.class("sapMBreadcrumbs");t.attr("aria-label",r._getResourceBundleText("BREADCRUMB_LABEL"));t.openEnd();t.openStart("ol");t.openEnd();if(a.getVisible()){this._renderControlInListItem(t,a,o,false,"sapMBreadcrumbsSelectItem")}s.forEach(function(r){this._renderControlInListItem(t,r,o,r instanceof e)},this);t.close("ol");t.close("nav")};r._renderControlInListItem=function(e,r,t,n,s){e.openStart("li");e.class("sapMBreadcrumbsItem");e.class(s);e.openEnd();e.renderControl(r);if(!n){e.openStart("span").class("sapMBreadcrumbsSeparator").openEnd().unsafeHtml(t).close("span")}e.close("li")};r._getResourceBundleText=function(e){return t.getText(e)};return r},true);

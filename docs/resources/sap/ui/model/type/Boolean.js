@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/model/SimpleType","sap/ui/model/FormatException","sap/ui/model/ParseException"],function(e,t,o){"use strict";var a=e.extend("sap.ui.model.type.Boolean",{constructor:function(){e.apply(this,arguments);this.sName="Boolean"}});a.prototype.formatValue=function(e,o){if(e==undefined||e==null){return null}switch(this.getPrimitiveType(o)){case"boolean":case"any":return e;case"string":return e.toString();case"int":case"float":default:throw new t("Don't know how to format Boolean to "+o)}};a.prototype.parseValue=function(e,t){var a;switch(this.getPrimitiveType(t)){case"boolean":return e;case"string":if(e.toLowerCase()=="true"||e=="X"){return true}if(e.toLowerCase()=="false"||e==""||e==" "){return false}a=sap.ui.getCore().getLibraryResourceBundle();throw new o(a.getText("Boolean.Invalid"));case"int":case"float":default:throw new o("Don't know how to parse Boolean from "+t)}};a.prototype.validateValue=function(e){};return a});

@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define([],function(){"use strict";var e={};e.render=function(e,t){var i=t.getId();e.write("<div");e.writeControlData(t);e.addClass("sapMFeedInBase");e.writeClasses();e.write(">");e.write('<div id="'+i+'-outerContainer"');e.addClass("sapMFeedIn");if(!t.getShowIcon()){e.addClass("sapMFeedInNoIcon")}if(!t.getEnabled()){e.addClass("sapMFeedInDisabled")}e.writeClasses();e.write(">");if(!!t.getShowIcon()){this._addImage(e,t,i)}e.write('<div id="'+i+'-container"');e.addClass("sapMFeedInContainer");e.writeClasses();e.write(">");var r=t._getTextArea();e.renderControl(r);e.renderControl(t._getPostButton());e.write("</div>");e.write("</div>");e.write('<div id="'+i+'-counterContainer"');e.addClass("sapMFeedInCounter");e.writeClasses();e.write(">");e.write("</div>");e.write("</div>")};e._addImage=function(e,t,i){e.write('<figure id="'+i+'-figure" class ="sapMFeedInFigure');if(!!t.getIcon()){e.write('">')}else{e.write(' sapMFeedListItemIsDefaultIcon">')}e.renderControl(t._getImageControl());e.write("</figure>")};return e},true);

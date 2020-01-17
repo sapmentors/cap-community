@@ -1,0 +1,58 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+
+// Provides the JSON model implementation of a property binding
+sap.ui.define([
+	'sap/ui/model/ChangeReason',
+	'sap/ui/model/ClientPropertyBinding',
+	"sap/base/util/deepEqual"
+],
+	function(ChangeReason, ClientPropertyBinding, deepEqual) {
+	"use strict";
+
+
+	/**
+	 *
+	 * @class
+	 * Property binding implementation for Messages
+	 *
+	 * @param {sap.ui.model.message.MessageModel} oModel
+	 * @param {string} sPath
+	 * @param {sap.ui.model.Context} oContext
+	 * @param {object} [mParameters]
+	 * @alias sap.ui.model.message.MessagePropertyBinding
+	 * @extends sap.ui.model.ClientPropertyBinding
+	 */
+	var MessagePropertyBinding = ClientPropertyBinding.extend("sap.ui.model.message.MessagePropertyBinding");
+
+	/**
+	 * @see sap.ui.model.PropertyBinding.prototype.setValue
+	 */
+	MessagePropertyBinding.prototype.setValue = function(oValue){
+		if (!deepEqual(this.oValue, oValue)) {
+			// the binding value will be updated by the model. The model calls checkupdate on all bindings after updating its value.
+			this.oModel.setProperty(this.sPath, oValue, this.oContext);
+		}
+	};
+
+	/**
+	 * Check whether this Binding would provide new values and in case it changed,
+	 * inform interested parties about this.
+	 *
+	 * @param {boolean} bForceupdate
+	 *
+	 */
+	MessagePropertyBinding.prototype.checkUpdate = function(bForceupdate){
+		var oValue = this._getValue();
+		if (!deepEqual(oValue, this.oValue) || bForceupdate) {// optimize for not firing the events when unneeded
+			this.oValue = oValue;
+			this._fireChange({reason: ChangeReason.Change});
+		}
+	};
+
+	return MessagePropertyBinding;
+
+});

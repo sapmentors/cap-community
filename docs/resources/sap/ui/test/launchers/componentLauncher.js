@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/core/ComponentContainer","sap/base/util/uid","sap/ui/thirdparty/jquery","sap/ui/core/Component"],function(e,n,t){"use strict";var a=false,o=null,r=null;return{start:function(s){if(a){throw new Error("sap.ui.test.launchers.componentLauncher: Start was called twice without teardown. Only one component can be started at a time.")}s.async=true;var u=sap.ui.component(s);a=true;return u.then(function(a){var s=n();r=t('<div id="'+s+'" class="sapUiOpaComponent"></div>');t("body").append(r).addClass("sapUiOpaBodyComponent");o=new e({component:a});o.placeAt(s)})},hasLaunched:function(){return a},teardown:function(){if(!a){throw new Error("sap.ui.test.launchers.componentLauncher: Teardown was called before start. No component was started.")}o.destroy();r.remove();a=false;t("body").removeClass("sapUiOpaBodyComponent")}}},true);

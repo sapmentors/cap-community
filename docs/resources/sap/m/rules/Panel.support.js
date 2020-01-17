@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/support/library"],function(e){"use strict";var t=e.Categories,a=e.Severity,i=e.Audiences;var r={id:"panelWithheaderTextOrWithHeaderToolbarWithTitle",audiences:[i.Control],categories:[t.Usability],enabled:true,minversion:"1.28",title:"Panel: Header text is missing",description:"According to the SAP Fiori Guidelines, a panel needs a header text or a header toolbar.",resolution:"Add a title directly to the panel or use a headerToolbar with title element",resolutionurls:[{text:"SAP Fiori Design Guidelines: Panel",href:"https://experience.sap.com/fiori-design-web/panel/#components",text2:"Explored Sample",href2:"https://openui5beta.hana.ondemand.com/#/sample/sap.m.sample.Panel/preview"}],check:function(e,t,i){i.getElementsByClassName("sap.m.Panel").forEach(function(t){if(!jQuery.isEmptyObject(t.getAggregation("Title text"))||!jQuery.isEmptyObject(t.getAggregation("Toolbar"))){var i=t.getId(),r=t.getMetadata().getElementName();e.addIssue({severity:a.Medium,details:"Panel '"+r+"' ("+i+") does not have a title or a toolbar aggregation",context:{id:i}})}})}};return[r]},true);

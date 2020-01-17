@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["./InputBaseRenderer","sap/ui/core/Renderer","sap/ui/core/LabelEnablement","sap/ui/Device"],function(t,e,i,r){"use strict";var o=e.extend(t);o.CSS_CLASS_COMBOBOXTEXTFIELD="sapMComboBoxTextField";o.writeInnerAttributes=function(t,e){t.writeAttribute("autocomplete","off");t.writeAttribute("autocorrect","off");t.writeAttribute("autocapitalize","off");t.writeAttribute("type","text")};o.writeAccAttributes=function(t,e){if(sap.ui.getCore().getConfiguration().getAccessibility()){t.writeAttribute("aria-haspopup","listbox");t.writeAttribute("aria-autocomplete","inline");t.writeAttribute("role","combobox")}};o.getAriaRole=function(){};o.getAriaDescribedBy=function(e){var i=t.getAriaDescribedBy.apply(this,arguments);if(r.browser.msie){return(i||"")+" "+e.oInvisibleText.getId()}return i};o.addOuterStyles=function(t,e){t.addStyle("max-width",e.getMaxWidth())};return o},true);

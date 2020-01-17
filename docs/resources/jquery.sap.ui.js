@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["jquery.sap.global","sap/base/util/ObjectPath","sap/ui/dom/jquery/control"],function(t,e){"use strict";function i(t){return t.getUIArea().getInterface()}function r(){return sap.ui.getCore().getUIArea(this.id)!=null}function n(){return sap.ui.getCore().getUIArea(this.id)}t.fn.root=function(t){if(t){sap.ui.getCore().setRoot(this.get(0),t);return this}var e=this.control();if(e.length>0){return e.map(i)}var r=this.uiarea();if(r.length>0){return r}this.each(function(){sap.ui.getCore().createUIArea(this)});return this};t.fn.uiarea=function(t){var e=this.slice("[id]").filter(r).map(n).get();return typeof t==="number"?e[t]:e};t.fn.sapui=function(i,r,n){return this.each(function(){var u=null;if(this){if(i.indexOf(".")==-1){i="sap.ui.commons."+i}var s=e.get(i);if(s){if(typeof n=="object"&&typeof n.press=="function"){n.press=t.proxy(n.press,this)}u=new s(r,n);u.placeAt(this)}}})};return t});

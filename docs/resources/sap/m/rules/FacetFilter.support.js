@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/support/library"],function(e){"use strict";var i=e.Categories,t=e.Severity,n=e.Audiences;var o={id:"facetFilterGrowingOneWayBinding",audiences:[n.Control],categories:[i.Usage],enabled:true,minversion:"1.28",title:"FacetFilter: growing is set along with two-way binding",description:"Growing works only with one-way binding",resolution:"Growing works only with one-way binding",resolutionurls:[{text:"SAP Fiori Design Guidelines: FacetFilter",href:"https://experience.sap.com/fiori-design-web/facet-filter/"}],check:function(e,i,n){n.getElementsByClassName("sap.m.FacetFilterList").forEach(function(i){if(i.getGrowing()&&i.getModel()&&i.getModel().getDefaultBindingMode()===sap.ui.model.BindingMode.TwoWay){var n=i.getId(),o=i.getMetadata().getElementName();e.addIssue({severity:t.High,details:"FacetFilter '"+o+"' ("+n+") growing property is set to true, when binding mode is two-way",context:{id:n}})}})}};return[o]},true);
