@@ -1,10 +1,11 @@
 name: build and publish reCAP website
 
 on: 
-  pull_request:
+  push:
     branches:
       - master
-
+    paths:
+      - 'docs-dev/**'
 jobs:
   build:
 
