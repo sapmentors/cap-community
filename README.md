@@ -22,6 +22,7 @@ On social media such as Twitter, please use the `#CAP` hashtag. Thanks, and welc
 
 * [Official Documentation](https://cap.cloud.sap/docs/)
 * [SAP Community CAP Landing Page](https://community.sap.com/topics/cloud-application-programming)
+* [Search SAP Community with the CAP tag](https://community.sap.com/search/?by=relevance&ct=qa&mt=9f13aee1-834c-4105-8e43-ee442775e5ce)
 * [SAP Community CAP Q&A Landing Page](https://answers.sap.com/tags/9f13aee1-834c-4105-8e43-ee442775e5ce)
 * [developer.sap.com Tutorials](https://developers.sap.com/tutorial-navigator.html?search=Cloud%20Application%20Programming%20Model)
 * [CAP repositories in the SAP-samples GitHub account](https://github.com/SAP-samples?q=cap)
