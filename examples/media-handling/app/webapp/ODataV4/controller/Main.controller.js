@@ -10,11 +10,11 @@ sap.ui.define([
         },
 
         handleUploadPress(oEvent) {
-            var baseUrl = "/media/Pictures";
             this.oFileUploader = this.byId("FileUploader");
             if (this.oFileUploader.getValue() === "") {
                 MessageToast.show("Please Choose any File");
             } else {
+                var baseUrl = this.oFileUploader.getUploadUrl();
                 // Create new image entity:
                 this.uuid = this.uuidv4();
 
@@ -33,8 +33,6 @@ sap.ui.define([
                         console.log("Success - data: "+data+" xhr: "+JSON.stringify(xhr));
                         // Upload Image
                         this.oFileUploader.setUploadUrl(baseUrl + "(" + this.uuid + ")/content")
-                        this.oFileUploader.setSendXHR(true);
-                        this.oFileUploader.setUseMultipart(false);
                         this.oFileUploader.setHttpRequestMethod("PUT")
                         this.oFileUploader.upload();
                     }.bind(this)

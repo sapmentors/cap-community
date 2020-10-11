@@ -10,8 +10,10 @@
 					id="FileUploader" 
 					uploadUrl="/media/Pictures" 
 					uploadComplete="onUploadComplete"
-					mimeType="image/jpeg,image/png"
-					fileType="jpg,png"/>
+					sendXHR="true"
+					useMultipart="false"
+					mimeType="image/jpeg"
+					fileType="jpg"/>
 				<Button text="{i18n>main.UploadFile}" press="handleUploadPress"/>
 
 				<List 
