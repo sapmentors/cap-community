@@ -20,7 +20,7 @@ sap.ui.define([
 
                 var json = { 
                     "ID": this.uuid,
-                    "mediatype": "image/png" 
+                    "mediatype": "image/jpeg" 
                 };
                 jQuery.ajax({
                     type : "POST",
@@ -34,6 +34,8 @@ sap.ui.define([
                         // Upload Image
                         this.oFileUploader.setUploadUrl(baseUrl + "(" + this.uuid + ")/content")
                         this.oFileUploader.setSendXHR(true);
+                        this.oFileUploader.setUseMultipart(false);
+                        this.oFileUploader.setHttpRequestMethod("PUT")
                         this.oFileUploader.upload();
                     }.bind(this)
                 })

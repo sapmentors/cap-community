@@ -8,7 +8,15 @@ GET {{protocol}}://{{host}}:{{port}}/media/
 
 ### Read Pictures
 # curl http://localhost:4004/media/Pictures | jq
+# @name readPictures
 GET {{protocol}}://{{host}}:{{port}}/media/Pictures
+### Process Response
+@ID = {{readPictures.response.body.value[0].ID}}
+### Read Picture
+GET http://localhost:4004/media/Pictures({{ID}})/content
+### Delete First Image from the list
+DELETE {{protocol}}://{{host}}:{{port}}/media/Pictures({{ID}}) 
+
 
 ### Create Picture
 # curl -X POST http://localhost:4004/media/Pictures -H "Accept: application/json" -H "Content-Type: application/json" --data '{ "ID": "da07ae51-d0d3-41e7-a737-2555a213e5a9", "mediatype": "image/png" }'
@@ -71,3 +79,4 @@ GET {{protocol}}://{{host}}:{{port}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555
 
 ### Delete Image JPEG
 DELETE {{protocol}}://{{host}}:{{port}}/media/Pictures(da07ae51-d0d3-41e7-a737-2555a213e5a8) 
+
