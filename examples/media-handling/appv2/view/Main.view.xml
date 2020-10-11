@@ -1,13 +1,15 @@
 <mvc:View controllerName="test.Sample.controller.Main" displayBlock="true" 
 	xmlns="sap.m" 
-	xmlns:cu="test.Sample.control"
 	xmlns:mvc="sap.ui.core.mvc" 
 	xmlns:u="sap.ui.unified">
 
 	<Page id="page" title="{i18n>appTitle}">
 		<content>
 			<VBox alignItems="Center" justifyContent="Center" height="100%">
-				<cu:CustomFileUploader id="FileUploader" uploadUrl="/media/Pictures" uploadComplete="onUploadComplete"/>
+				<u:FileUploader id="FileUploader" 
+					uploadUrl="/media/Pictures" 
+					uploadComplete="onUploadComplete"
+					uploadAborted="onUploadAborted" />
 
 				<Button text="{i18n>main.UploadFile}" press="handleUploadPress"/>
 
@@ -18,7 +20,7 @@
 					<items>
 						<CustomListItem>
 							<Text text="{Backend>ID}" />
-							<Image src="/media/Pictures({Backend>ID})/content"
+								<Image src="/v2/media/Pictures({Backend>ID})/$value"
 									decorative="false" />
 						</CustomListItem>
 					</items>
