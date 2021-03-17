@@ -5,12 +5,12 @@
   "repository": "<Add your repository here>",
   "license": "WTFPL",
   "dependencies": {
-    "@sap/cds": "^3.33.1",
-    "@sap/cds-odata-v2-adapter-proxy": "^1.4.22",
-    "@ui5/cli": "2.0.2",
+    "@sap/cds": "^4.1.9",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.4.47",
+    "@ui5/cli": "2.4.5",
     "compression": "^1.7.4",
     "express": "^4.17.1",
-    "helmet": "^3.22.0",
+    "helmet": "^4.1.1",
     "passport": "^0.4.1"
   },
   "engines": {
@@ -19,7 +19,6 @@
   "scripts": {
     "build": "cds build/all --clean",
     "deploy": "cds deploy",
-    "startv2": "node v2server",
     "start": "cds run"
   },
   "files": [
@@ -44,6 +43,6 @@
     }
   },
   "devDependencies": {
-    "sqlite3": "^4.1.1"
+    "sqlite3": "^5.0.0"
   }
 }

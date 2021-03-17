@@ -10,17 +10,17 @@ sap.ui.define([
         },
 
         handleUploadPress(oEvent) {
-            var baseUrl = "/media/Pictures";
             this.oFileUploader = this.byId("FileUploader");
             if (this.oFileUploader.getValue() === "") {
                 MessageToast.show("Please Choose any File");
             } else {
+                var baseUrl = this.oFileUploader.getUploadUrl();
                 // Create new image entity:
                 this.uuid = this.uuidv4();
 
                 var json = { 
                     "ID": this.uuid,
-                    "mediatype": "image/png" 
+                    "mediatype": "image/jpeg" 
                 };
                 jQuery.ajax({
                     type : "POST",
@@ -33,7 +33,7 @@ sap.ui.define([
                         console.log("Success - data: "+data+" xhr: "+JSON.stringify(xhr));
                         // Upload Image
                         this.oFileUploader.setUploadUrl(baseUrl + "(" + this.uuid + ")/content")
-                        this.oFileUploader.setSendXHR(true);
+                        this.oFileUploader.setHttpRequestMethod("PUT")
                         this.oFileUploader.upload();
                     }.bind(this)
                 })
