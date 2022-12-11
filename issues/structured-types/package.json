@@ -22,7 +22,7 @@
   "homepage": "https://github.com/sapmentors/cap-community#readme",
   "dependencies": {
     "@sap/cds-dk": "^1.0.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "sqlite": "^3.0.3"
   }
 }
